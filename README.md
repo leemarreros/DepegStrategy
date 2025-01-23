@@ -1,4 +1,15 @@
+
 # Depeg Strategy
+
+## Clone and Run Tests
+```bash
+git clone https://github.com/leemarreros/DepegStrategy.git
+cd DepegStrategy
+forge install
+forge test -vv
+```
+
+## Overview
 
 This is a trading strategy for taking advantage of the depeg between two stable coins. While the amount of tokens could remain the same, the underlying value may be different. For instance, at a certain point 10 USDC are worth 10 USD, while at another moment, they are worth 9.8 USD. The same would apply to any other stable coin. This gap is also reflected in the trading pool when two stable coins are exchanged. Sometimes 10 USDC are worth 11 USDT, while at another moment, they are worth 9 USDT. To take advantage of strategy, a gap in their underlying value must be detected and at the same time there must exist a favorable exchange rate within the trading pool.
 
@@ -42,7 +53,7 @@ In the image below you can see how the intial supply of collateral tokens enters
 
 ## Running the tests
 
-There are two testing scenarios. One for short and one for long.
+There are two testing scenarios. One for short and one for long. Necessary mocks have been implemented.
 
 In the short strategy we want our debt to decrease:
 ```bash
@@ -70,9 +81,4 @@ Ran 2 tests for test/DepegStrategy.t.sol:DepegStrategyTest
 [PASS] testLongStrategy() (gas: 6131234)
 [PASS] testShortStrategy() (gas: 6131243)
 Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.61ms (2.38ms CPU time)
-```
-
-## Clone this repo
-```bash
-git clone --recursive https://github.com/defi-protocol/depeg_strategy.git
 ```
