@@ -2,5 +2,9 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+solc = "0.8.22"
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+remappings = [
+    '@aave/core-v3/=lib/aave-v3-core/',
+    '@traderjoe-xyz/=lib/joe-v2-periphery/lib/joe-v2/'
+]
